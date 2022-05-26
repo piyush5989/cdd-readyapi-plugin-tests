@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:operation id="187cb38d-40ce-4df9-9767-f8d07fcac271" isOneWay="false" action="" name="PlayersWithGoalsRanked" bindingOperationName="PlayersWithGoalsRanked" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional" xmlns:con="http://eviware.com/soapui/config">
+<con:operation id="187cb38d-40ce-4df9-9767-f8d07fcac271" isOneWay="false" action="" name="PlayersWithGoalsRanked" bindingOperationName="PlayersWithGoalsRanked" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
     <con:setting id="187cb38d-40ce-4df9-9767-f8d07fcac271fileName">PlayersWithGoalsRanked</con:setting>
   </con:settings>
@@ -13,6 +13,10 @@
       <foot:PlayersWithGoalsRanked/>\r
    </soapenv:Body>\r
 </soapenv:Envelope>]]></con:request>
+    <con:credentials>
+      <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+      <con:authType>No Authorization</con:authType>
+    </con:credentials>
     <con:wsaConfig mustUnderstand="NONE" version="200508" action="https://footballpool.dataaccess.eu/InfoSoapType/PlayersWithGoalsRankedRequest"/>
   </con:call>
 </con:operation>

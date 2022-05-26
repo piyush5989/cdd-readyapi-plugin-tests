@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:operation id="bbca62f3-180f-41ad-96a7-6ae965f50f01" isOneWay="false" action="" name="LevelFirstGameDate" bindingOperationName="LevelFirstGameDate" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional" xmlns:con="http://eviware.com/soapui/config">
+<con:operation id="bbca62f3-180f-41ad-96a7-6ae965f50f01" isOneWay="false" action="" name="LevelFirstGameDate" bindingOperationName="LevelFirstGameDate" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
     <con:setting id="bbca62f3-180f-41ad-96a7-6ae965f50f01fileName">LevelFirstGameDate</con:setting>
   </con:settings>
@@ -15,6 +15,10 @@
       </foot:LevelFirstGameDate>\r
    </soapenv:Body>\r
 </soapenv:Envelope>]]></con:request>
+    <con:credentials>
+      <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+      <con:authType>No Authorization</con:authType>
+    </con:credentials>
     <con:wsaConfig mustUnderstand="NONE" version="200508" action="https://footballpool.dataaccess.eu/InfoSoapType/LevelFirstGameDateRequest"/>
   </con:call>
 </con:operation>
