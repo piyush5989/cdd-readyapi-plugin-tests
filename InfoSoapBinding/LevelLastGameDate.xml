@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:operation id="9aa0cc11-5f4a-4bd5-bca2-8bdb1cbbe092" isOneWay="false" action="" name="LevelLastGameDate" bindingOperationName="LevelLastGameDate" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="9aa0cc11-5f4a-4bd5-bca2-8bdb1cbbe092fileName">LevelLastGameDate</con:setting>
+  </con:settings>
+  <con:call id="30527eb2-bcaf-4d41-ad66-932a6b634dee" name="LevelLastGameDate Request">
+    <con:settings/>
+    <con:encoding>UTF-8</con:encoding>
+    <con:endpoint>https://ws.footballpool.dataaccess.eu/info.wso</con:endpoint>
+    <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:foot="https://footballpool.dataaccess.eu">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <foot:LevelLastGameDate>\r
+         <foot:iLevel>?</foot:iLevel>\r
+      </foot:LevelLastGameDate>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request>
+    <con:wsaConfig mustUnderstand="NONE" version="200508" action="https://footballpool.dataaccess.eu/InfoSoapType/LevelLastGameDateRequest"/>
+  </con:call>
+</con:operation>

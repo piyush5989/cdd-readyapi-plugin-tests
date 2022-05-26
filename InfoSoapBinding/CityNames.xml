@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:operation id="19c48d9f-ff35-4eb4-bde4-8e45e8a80b82" isOneWay="false" action="" name="CityNames" bindingOperationName="CityNames" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="19c48d9f-ff35-4eb4-bde4-8e45e8a80b82fileName">CityNames</con:setting>
+  </con:settings>
+  <con:call id="23e04cf8-e08c-494f-a3ec-153bb3da1a5b" name="CityNames Request">
+    <con:settings/>
+    <con:encoding>UTF-8</con:encoding>
+    <con:endpoint>https://ws.footballpool.dataaccess.eu/info.wso</con:endpoint>
+    <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:foot="https://footballpool.dataaccess.eu">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <foot:CityNames/>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request>
+    <con:wsaConfig mustUnderstand="NONE" version="200508" action="https://footballpool.dataaccess.eu/InfoSoapType/CityNamesRequest"/>
+  </con:call>
+</con:operation>

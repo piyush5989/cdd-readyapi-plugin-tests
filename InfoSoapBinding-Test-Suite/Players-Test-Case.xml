@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="c639ad59-d566-4f23-86ef-6e3b798bedab" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="Players Test Case" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="c639ad59-d566-4f23-86ef-6e3b798bedabfileName">Players-Test-Case</con:setting>
+  </con:settings>
+  <con:testStep type="request" id="8964efa7-6586-4d30-8b61-8ce684a92211" name="Players">
+    <con:settings/>
+    <con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:interface>InfoSoapBinding</con:interface>
+      <con:operation>Players</con:operation>
+      <con:request name="Players" id="b9f27dbf-5602-47b3-8ce4-bc22579ae461">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:encoding>UTF-8</con:encoding>
+        <con:endpoint>https://ws.footballpool.dataaccess.eu/info.wso</con:endpoint>
+        <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:foot="https://footballpool.dataaccess.eu">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <foot:Players>
+         <foot:sName>David</foot:sName>
+      </foot:Players>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request>
+        <con:credentials>
+          <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:wsaConfig action="https://footballpool.dataaccess.eu/InfoSoapType/PlayersRequest" mustUnderstand="NONE" version="200508"/>
+        <con:wsrmConfig version="1.2"/>
+      </con:request>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testCase>

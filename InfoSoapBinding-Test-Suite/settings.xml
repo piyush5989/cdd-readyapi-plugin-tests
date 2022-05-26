@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testSuite id="530e4b7b-2db6-41c2-b193-aa685a243e9b" name="InfoSoapBinding Test Suite" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="530e4b7b-2db6-41c2-b193-aa685a243e9bfileName">InfoSoapBinding-Test-Suite</con:setting>
+  </con:settings>
+  <con:runType>SEQUENTIAL</con:runType>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testSuite>

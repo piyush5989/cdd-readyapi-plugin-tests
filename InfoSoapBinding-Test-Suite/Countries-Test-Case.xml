@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="666ce54b-3ff7-4449-9618-3b51e92a08fe" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="Countries Test Case" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="666ce54b-3ff7-4449-9618-3b51e92a08fefileName">Countries-Test-Case</con:setting>
+  </con:settings>
+  <con:testStep type="request" id="48fda91c-3099-4e92-8c69-f954ebc1975d" name="Countries">
+    <con:settings/>
+    <con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:interface>InfoSoapBinding</con:interface>
+      <con:operation>Countries</con:operation>
+      <con:request name="Countries" id="d7e7b05c-7fa2-4301-9181-c10621187444">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:encoding>UTF-8</con:encoding>
+        <con:endpoint>https://ws.footballpool.dataaccess.eu/info.wso</con:endpoint>
+        <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:foot="https://footballpool.dataaccess.eu">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <foot:Countries>
+         <foot:sCountryName>India</foot:sCountryName>
+      </foot:Countries>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request>
+        <con:credentials>
+          <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:wsaConfig action="https://footballpool.dataaccess.eu/InfoSoapType/CountriesRequest" mustUnderstand="NONE" version="200508"/>
+        <con:wsrmConfig version="1.2"/>
+      </con:request>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testCase>

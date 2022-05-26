@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:operation id="2c779fea-6d95-4216-a82f-76ba85056ba0" isOneWay="false" action="" name="AllCardsInfo" bindingOperationName="AllCardsInfo" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="2c779fea-6d95-4216-a82f-76ba85056ba0fileName">AllCardsInfo</con:setting>
+  </con:settings>
+  <con:call id="50618b98-0594-47b8-9d67-ae3d78541320" name="AllCardsInfo Request">
+    <con:settings/>
+    <con:encoding>UTF-8</con:encoding>
+    <con:endpoint>https://ws.footballpool.dataaccess.eu/info.wso</con:endpoint>
+    <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:foot="https://footballpool.dataaccess.eu">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <foot:AllCardsInfo/>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request>
+    <con:wsaConfig mustUnderstand="NONE" version="200508" action="https://footballpool.dataaccess.eu/InfoSoapType/AllCardsInfoRequest"/>
+  </con:call>
+</con:operation>

@@ -1,0 +1,56 @@
+#labels Featured
+Configuration of the plugin and notifications
+
+= Introduction =
+
+After adding more flexibility and configuration options the plugin isn't self explaining any more. To catch up with this I'm writing about it on this page. If anything is missing or not clear enough, feel free to fill an issue or contact me.
+
+= Installation =
+In the first versions of TeamCity you just needed to put the buildbunny-X.jar in the WEB-INF/lib folder of the TeamCity folder. I have read about a new format in TeamCity 5, but this is not yet released. For me the jar-way worked also in TeamCity 5.
+If you need the BuildBunny plugin for the TeamCity version 3 or 4 you can use the older downloads (prior 0.4).
+
+= Plugin Screenshot =
+
+SCREENSHOT MISSING
+
+= Details =
+
+== General Info ==
+This plugin is user specific. This means it can be found on the notification page of every user. You can apply specific notification settings like the projects and kind of event for notification. In this way you can configure multiple Nabaztags but they need to be configured in different user of TeamCity. 
+The settings can only be changed in the user settings, which was used to setup the Nabaztag. It is not possible for an administrator to change someone else messages. Think about it as if every of your developers has its own Nabaztag and want to configure him.
+
+== Nabaztag ==
+If you start with the BuildBunny plugin you need to enter the Nabaztag serial number and your token. This is needed to send out messages to your Nabaztag. Every other configuration option is optional at the moment and can be left blank. 
+
+== Messages ==
+After using fix messages in the first version these are now configurable. If you leave the field blank, a default message is send to the Nabaztag. 
+
+The following messages can be configured:
+|| *Name* || *Default* || *Notes* ||
+|| Start Message || Build #PROJECT# started. || | 
+|| Success Message || Build #PROJECT# successfull. | ||
+|| Failed Message || Build #PROJECT# failed. || ||
+|| Labeling Message || Labeling of build #PROJECT# failed. || ||
+|| Failing Message || Build #PROJECT# is failing. || ||
+|| Hanging Message || Build #PROJECT# is probably hanging. || ||
+|| Changed Message || Responsibility of build #PROJECT# changed. || ||
+|| Responsible Message || #USER# is assigned responsible for build #PROJECT#. || ||
+
+== Voices ==
+With the newer versions you are able to enter a voice name. If you leave the field blank a random voice is choosen. 
+At the moment the following voices are used in random order:
+  * "AU-Colleen"
+  * "AU-Jon"
+  * "UK-Edwin"
+  * "UK-Leonard"
+  * "UK-Mistermuggles"
+  * "UK-Penelope"
+  * "UK-Rachel"
+  * "UK-Shirley"
+  * "US-Bethany"
+  * "US-Billye"
+  * "US-Clarence"
+  * "US-Darleen"
+  * "US-Ernest"
+  * "US-Liberty"
+  * "US-Lilian"

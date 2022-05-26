@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:interface xsi:type="con:WsdlInterface" id="d665d2e3-5fd1-4f92-b9a6-2f1e6677d899" wsaVersion="NONE" name="InfoSoapBinding" type="wsdl" bindingName="{https://footballpool.dataaccess.eu}InfoSoapBinding" soapVersion="1_1" anonymous="optional" definition="https://footballpool.dataaccess.eu/info.wso?WSDL" xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <con:settings>
+    <con:setting id="d665d2e3-5fd1-4f92-b9a6-2f1e6677d899fileName">InfoSoapBinding</con:setting>
+  </con:settings>
+  <con:definitionCache/>
+  <con:endpoints>
+    <con:endpoint>https://ws.footballpool.dataaccess.eu/info.wso</con:endpoint>
+  </con:endpoints>
+</con:interface>

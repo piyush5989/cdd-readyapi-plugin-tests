@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:operation id="c2726f86-b41b-4100-947a-eefcd3b07750" isOneWay="false" action="" name="AllPlayersWithRole" bindingOperationName="AllPlayersWithRole" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="c2726f86-b41b-4100-947a-eefcd3b07750fileName">AllPlayersWithRole</con:setting>
+  </con:settings>
+  <con:call id="3c1981a5-6187-4aff-87a4-348ea455b53b" name="AllPlayersWithRole Request">
+    <con:settings/>
+    <con:encoding>UTF-8</con:encoding>
+    <con:endpoint>https://ws.footballpool.dataaccess.eu/info.wso</con:endpoint>
+    <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:foot="https://footballpool.dataaccess.eu">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <foot:AllPlayersWithRole>\r
+         <foot:sTeamName>?</foot:sTeamName>\r
+         <foot:sRoleCode>?</foot:sRoleCode>\r
+      </foot:AllPlayersWithRole>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request>
+    <con:wsaConfig mustUnderstand="NONE" version="200508" action="https://footballpool.dataaccess.eu/InfoSoapType/AllPlayersWithRoleRequest"/>
+  </con:call>
+</con:operation>

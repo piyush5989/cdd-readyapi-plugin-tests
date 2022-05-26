@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:operation id="ab19560a-0133-41a4-b69e-f3090ff209f1" isOneWay="false" action="" name="TeamIDsByGroup" bindingOperationName="TeamIDsByGroup" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="ab19560a-0133-41a4-b69e-f3090ff209f1fileName">TeamIDsByGroup</con:setting>
+  </con:settings>
+  <con:call id="a375bd7b-d283-46e2-9a41-5e3d941aa864" name="TeamIDsByGroup Request">
+    <con:settings/>
+    <con:encoding>UTF-8</con:encoding>
+    <con:endpoint>https://ws.footballpool.dataaccess.eu/info.wso</con:endpoint>
+    <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:foot="https://footballpool.dataaccess.eu">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <foot:TeamIDsByGroup>\r
+         <foot:sGroupCode>?</foot:sGroupCode>\r
+      </foot:TeamIDsByGroup>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request>
+    <con:wsaConfig mustUnderstand="NONE" version="200508" action="https://footballpool.dataaccess.eu/InfoSoapType/TeamIDsByGroupRequest"/>
+  </con:call>
+</con:operation>

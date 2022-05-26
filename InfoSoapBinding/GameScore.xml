@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:operation id="badcae70-948d-4cb7-b51b-58bd2cbc5831" isOneWay="false" action="" name="GameScore" bindingOperationName="GameScore" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="badcae70-948d-4cb7-b51b-58bd2cbc5831fileName">GameScore</con:setting>
+  </con:settings>
+  <con:call id="a9ee2e7d-d285-4757-a670-4af1079e43e1" name="GameScore Request">
+    <con:settings/>
+    <con:encoding>UTF-8</con:encoding>
+    <con:endpoint>https://ws.footballpool.dataaccess.eu/info.wso</con:endpoint>
+    <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:foot="https://footballpool.dataaccess.eu">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <foot:GameScore>\r
+         <foot:iGameNumber>?</foot:iGameNumber>\r
+      </foot:GameScore>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request>
+    <con:wsaConfig mustUnderstand="NONE" version="200508" action="https://footballpool.dataaccess.eu/InfoSoapType/GameScoreRequest"/>
+  </con:call>
+</con:operation>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:operation id="d8f9208e-f01a-4ebc-84cf-e77702b6ce08" isOneWay="false" action="" name="GameIDsGroupedByCity" bindingOperationName="GameIDsGroupedByCity" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="d8f9208e-f01a-4ebc-84cf-e77702b6ce08fileName">GameIDsGroupedByCity</con:setting>
+  </con:settings>
+  <con:call id="ef054de2-5efa-49a0-9b26-fdb32d056b39" name="GameIDsGroupedByCity Request">
+    <con:settings/>
+    <con:encoding>UTF-8</con:encoding>
+    <con:endpoint>https://ws.footballpool.dataaccess.eu/info.wso</con:endpoint>
+    <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:foot="https://footballpool.dataaccess.eu">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <foot:GameIDsGroupedByCity/>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request>
+    <con:wsaConfig mustUnderstand="NONE" version="200508" action="https://footballpool.dataaccess.eu/InfoSoapType/GameIDsGroupedByCityRequest"/>
+  </con:call>
+</con:operation>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:operation id="a30a3ba4-e5f7-45a9-abd5-27fc18bc7989" isOneWay="false" action="" name="GroupFirstGameDate" bindingOperationName="GroupFirstGameDate" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="a30a3ba4-e5f7-45a9-abd5-27fc18bc7989fileName">GroupFirstGameDate</con:setting>
+  </con:settings>
+  <con:call id="10e56470-a5c6-47ff-94fa-cbe8d5d03074" name="GroupFirstGameDate Request">
+    <con:settings/>
+    <con:encoding>UTF-8</con:encoding>
+    <con:endpoint>https://ws.footballpool.dataaccess.eu/info.wso</con:endpoint>
+    <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:foot="https://footballpool.dataaccess.eu">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <foot:GroupFirstGameDate>\r
+         <foot:sGroupCode>?</foot:sGroupCode>\r
+      </foot:GroupFirstGameDate>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request>
+    <con:wsaConfig mustUnderstand="NONE" version="200508" action="https://footballpool.dataaccess.eu/InfoSoapType/GroupFirstGameDateRequest"/>
+  </con:call>
+</con:operation>

@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 29
+/svn/!svn/ver/24/tags/REL-0.6
+END
+teamcity-plugin.xml
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/24/tags/REL-0.6/teamcity-plugin.xml
+END
+pom.xml
+K 25
+svn:wc:ra_dav:version-url
+V 37
+/svn/!svn/ver/24/tags/REL-0.6/pom.xml
+END

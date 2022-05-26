@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:operation id="b28d89e9-e071-47b9-9d8b-8e0289af9e79" isOneWay="false" action="" name="FirstLastGamesEachLevel" bindingOperationName="FirstLastGamesEachLevel" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="b28d89e9-e071-47b9-9d8b-8e0289af9e79fileName">FirstLastGamesEachLevel</con:setting>
+  </con:settings>
+  <con:call id="3597be50-c222-4a4c-92d5-d39edbec813a" name="FirstLastGamesEachLevel Request">
+    <con:settings/>
+    <con:encoding>UTF-8</con:encoding>
+    <con:endpoint>https://ws.footballpool.dataaccess.eu/info.wso</con:endpoint>
+    <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:foot="https://footballpool.dataaccess.eu">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <foot:FirstLastGamesEachLevel/>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request>
+    <con:wsaConfig mustUnderstand="NONE" version="200508" action="https://footballpool.dataaccess.eu/InfoSoapType/FirstLastGamesEachLevelRequest"/>
+  </con:call>
+</con:operation>

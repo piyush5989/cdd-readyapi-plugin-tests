@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:operation id="fea99939-ed42-4f82-b85b-db7d26a0fc26" isOneWay="false" action="" name="GroupStandings" bindingOperationName="GroupStandings" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="fea99939-ed42-4f82-b85b-db7d26a0fc26fileName">GroupStandings</con:setting>
+  </con:settings>
+  <con:call id="8dd009ad-538f-44a6-9165-a8cdb61c236a" name="GroupStandings Request">
+    <con:settings/>
+    <con:encoding>UTF-8</con:encoding>
+    <con:endpoint>https://ws.footballpool.dataaccess.eu/info.wso</con:endpoint>
+    <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:foot="https://footballpool.dataaccess.eu">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <foot:GroupStandings>\r
+         <foot:iGroupId>?</foot:iGroupId>\r
+      </foot:GroupStandings>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request>
+    <con:wsaConfig mustUnderstand="NONE" version="200508" action="https://footballpool.dataaccess.eu/InfoSoapType/GroupStandingsRequest"/>
+  </con:call>
+</con:operation>

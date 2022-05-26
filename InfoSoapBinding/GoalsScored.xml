@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:operation id="8f722184-fa2d-4254-a33a-4e49f99e5e70" isOneWay="false" action="" name="GoalsScored" bindingOperationName="GoalsScored" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="8f722184-fa2d-4254-a33a-4e49f99e5e70fileName">GoalsScored</con:setting>
+  </con:settings>
+  <con:call id="eebc10c8-f2c0-40f8-aea1-2b05980d7da5" name="GoalsScored Request">
+    <con:settings/>
+    <con:encoding>UTF-8</con:encoding>
+    <con:endpoint>https://ws.footballpool.dataaccess.eu/info.wso</con:endpoint>
+    <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:foot="https://footballpool.dataaccess.eu">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <foot:GoalsScored/>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request>
+    <con:wsaConfig mustUnderstand="NONE" version="200508" action="https://footballpool.dataaccess.eu/InfoSoapType/GoalsScoredRequest"/>
+  </con:call>
+</con:operation>
