@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="9a2f856b-a1da-4977-8c00-23aff5151bf7" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="/store/order/{orderId}-Request 1 Test Case" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="9a2f856b-a1da-4977-8c00-23aff5151bf7fileName">%2Fstore%2Forder%2F%7BorderId%7D-Request-1-Test-Case1</con:setting>
+  </con:settings>
+  <con:testStep type="restrequest" name="DELETE Request" id="2134e682-74ea-43b8-a4fb-c2886a53d914">
+    <con:settings/>
+    <con:config service="Swagger Petstore" resourcePath="/v2/store/order/{orderId}" methodName="deleteOrder" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="DELETE Request" id="a8cf3697-f9dd-4bb2-9644-84e5d47b4918" mediaType="application/json">
+        <con:settings/>
+        <con:endpoint>http://petstore.swagger.io</con:endpoint>
+        <con:request/>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testCase>
