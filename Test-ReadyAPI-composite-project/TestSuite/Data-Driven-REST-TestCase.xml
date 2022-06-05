@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="bfb43783-1d54-4599-9c4a-e61b64b747da" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Data Driven REST TestCase" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="bfb43783-1d54-4599-9c4a-e61b64b747dafileName">Data-Driven-REST-TestCase</con:setting>
+  </con:settings>
+  <con:savedRecentRuns>1</con:savedRecentRuns>
+  <con:testStep type="datasource" name="DataSource" id="bf98152d-6965-42b9-9561-2b50d8410319">
+    <con:settings/>
+    <con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:dataSource type="Data Generator">
+        <con:configuration>
+          <generatedDataCount>5</generatedDataCount>
+          <generatorsTotalNumber>2</generatorsTotalNumber>
+          <lastSelectedProperty>0</lastSelectedProperty>
+          <GeneratorType0>NAME</GeneratorType0>
+          <PropertyName0>username</PropertyName0>
+          <repetitionCountusername>0</repetitionCountusername>
+          <repeatValuesusername>false</repeatValuesusername>
+          <NameTypeName0>FirstName</NameTypeName0>
+          <NameGenderName0>Any</NameGenderName0>
+          <GeneratorType1>STR</GeneratorType1>
+          <PropertyName1>password</PropertyName1>
+          <repetitionCountpassword>0</repetitionCountpassword>
+          <repeatValuespassword>false</repeatValuespassword>
+          <PasswordDataGeneratorUseSpacespassword>false</PasswordDataGeneratorUseSpacespassword>
+          <PasswordDataGeneratorUsePunctuationMarkspassword>false</PasswordDataGeneratorUsePunctuationMarkspassword>
+          <PasswordDataGeneratorUseLetterspassword>true</PasswordDataGeneratorUseLetterspassword>
+          <PasswordDataGeneratorUseDigitspassword>true</PasswordDataGeneratorUseDigitspassword>
+          <PasswordDataGeneratorMaxCharacterCountpassword>10</PasswordDataGeneratorMaxCharacterCountpassword>
+          <PasswordDataGeneratorMinCharacterCountpassword>5</PasswordDataGeneratorMinCharacterCountpassword>
+          <escapeSpaceSequence/>
+        </con:configuration>
+      </con:dataSource>
+      <con:shared>true</con:shared>
+      <con:restartShared>true</con:restartShared>
+      <con:property>username</con:property>
+      <con:property>password</con:property>
+      <con:completeLastOperation>true</con:completeLastOperation>
+      <con:restartOnRun>true</con:restartOnRun>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="Login test step" id="e9fd58a8-9f8e-4165-aefe-453196b8a0e3">
+    <con:settings/>
+    <con:config service="http://localhost:8084" resourcePath="/login" methodName="Login" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="Login test step" id="f0635073-e001-43aa-9998-b56c4836b1b1" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint>http://localhost:8084</con:endpoint>
+        <con:request>{
+                            "domain" : "sample",
+                            "pre-emptive auth" : true
+                            }</con:request>
+        <con:originalUri>http://localhost/login</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="e191c7c9-ccc6-4fb8-bf0d-a6f2af4ed5f9" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Existence Match" id="1ced112a-3fc8-462b-84de-bde96aeb36d1" name="Check for existence of [sessionid]">
+          <con:configuration>
+            <path>$['sessionid']</path>
+            <content>true</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:parameters>
+          <con:entry key="password" value="${DataSource#password}"/>
+          <con:entry key="username" value="${DataSource#username}"/>
+        </con:parameters>
+        <con:parameterOrder>
+          <con:entry>username</con:entry>
+          <con:entry>password</con:entry>
+        </con:parameterOrder>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="Search test step" id="f0db7ac5-5669-4a5d-9082-049f811dd3ec">
+    <con:settings/>
+    <con:config service="http://localhost:8084" resourcePath="/search" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="Search test step" id="62e6693c-4a8b-4c46-8fdc-fbe4a2652fab" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint>http://localhost:8084</con:endpoint>
+        <con:request>{
+                            "timestamp" : "${Login test step#Response#$['timestamp']}"
+                            }</con:request>
+        <con:originalUri>http://localhost/search</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="15d75e75-93fa-43bc-99e8-ab2f9e786425" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Existence Match" id="61ce3d60-b446-4b1f-96ef-2b7303047c7c" name="Check for existence of [id]">
+          <con:configuration>
+            <path>$['result']['item']['id']</path>
+            <content>true</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:parameters>
+          <con:entry key="searchstring" value="Item 1"/>
+          <con:entry key="sessionid" value="${Login test step#Response#$.sessionid}"/>
+        </con:parameters>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="Buy test step" id="6c603621-5477-48c7-8a6e-c6b6d06a600f">
+    <con:settings/>
+    <con:config service="http://localhost:8084" resourcePath="/search" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="Buy test step" id="62e6693c-4a8b-4c46-8fdc-fbe4a2652fab" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint>http://localhost:8084</con:endpoint>
+        <con:request>{
+                            "timestamp" : "${Login test step#Response#$['timestamp']}"
+                            }</con:request>
+        <con:originalUri>http://localhost/search</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="59ab57cc-e61c-4b37-96ea-1bfa7bd7c3bd" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Existence Match" id="fa3a5c3b-a96b-455c-9ef1-7798f5c61856" name="Check for existence of [id]">
+          <con:configuration>
+            <path>$['result']['item']['id']</path>
+            <content>true</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:parameters>
+          <con:entry key="searchstring" value="Item 1"/>
+          <con:entry key="sessionid" value="${Login test step#Response#$.sessionid}"/>
+        </con:parameters>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="Logout test step" id="6b7070cb-fce3-4c63-afaf-113330193cf9">
+    <con:settings/>
+    <con:config service="http://localhost:8084" resourcePath="/logout" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="Logout test step" id="f1c29317-1395-4ebb-a1bb-16b22c832cdf" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint>http://localhost:8084</con:endpoint>
+        <con:request/>
+        <con:originalUri>http://localhost/logout</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="6ac6f8bb-39cd-4140-bc62-f469de944750" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:parameters>
+          <entry key="sessionid" value="${Login test step#Response#$.sessionid}" xmlns="http://eviware.com/soapui/config"/>
+        </con:parameters>
+        <con:parameterOrder>
+          <con:entry>sessionid</con:entry>
+        </con:parameterOrder>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="datasourceloop" name="DataSource Loop" id="2b59c8ea-4324-4336-9a4d-80546ce0fa7f">
+    <con:settings/>
+    <con:config>
+      <dataSourceStep>DataSource</dataSourceStep>
+      <targetStep>Login test step</targetStep>
+      <discardResults>false</discardResults>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+  <con:breakPoints>
+    <con:testStepId>6a94eacc-b355-4b57-814a-f6e91ba758ce</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+  <con:breakPoints>
+    <con:testStepId>2d4d2cc1-e271-41b4-9a44-281e52af8035</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+  <con:breakPoints>
+    <con:testStepId>bf98152d-6965-42b9-9561-2b50d8410319</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+  <con:breakPoints>
+    <con:testStepId>2b59c8ea-4324-4336-9a4d-80546ce0fa7f</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+</con:testCase>

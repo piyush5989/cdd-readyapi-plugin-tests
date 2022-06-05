@@ -1,0 +1,7 @@
+ServiceSoapBinding
+http%3A%2F%2Flocalhost%3A8084
+TestSuite
+TestSuite-Copy-One
+TestSuite-Copy-Two
+ServiceSoapBinding-MockService
+RESTMockService

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="search" path="/search" id="973a761d-2b4b-4b5b-9736-1d7d78ec9af3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="973a761d-2b4b-4b5b-9736-1d7d78ec9af3fileName">search</con:setting>
+  </con:settings>
+  <con:parameters>
+    <con:parameter>
+      <con:name>sessionid</con:name>
+      <con:value/>
+      <con:style>QUERY</con:style>
+      <con:default/>
+    </con:parameter>
+    <con:parameter>
+      <con:name>searchstring</con:name>
+      <con:value/>
+      <con:style>QUERY</con:style>
+      <con:default/>
+    </con:parameter>
+  </con:parameters>
+  <con:method name="Method 1" id="a1ff4b74-5e2b-4b4e-a242-bdbd81d987a2" method="POST">
+    <con:settings/>
+    <con:parameters/>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/xml</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:element xmlns:sear="http://localhost/search">sear:Response</con:element>
+    </con:representation>
+    <con:representation type="REQUEST">
+      <con:mediaType>application/json</con:mediaType>
+      <con:params/>
+    </con:representation>
+    <con:request name="Request 1" id="62e6693c-4a8b-4c46-8fdc-fbe4a2652fab" mediaType="application/json" postQueryString="false">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+      </con:settings>
+      <con:endpoint>http://localhost:8084</con:endpoint>
+      <con:request/>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters>
+        <entry key="searchstring" value="Item 1" xmlns="http://eviware.com/soapui/config"/>
+      </con:parameters>
+    </con:request>
+  </con:method>
+</con:resource>

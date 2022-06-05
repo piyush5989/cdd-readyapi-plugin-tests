@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testSuite name="TestSuite" id="574cf3f6-8e98-48d7-86c8-27a4e2b63ab4" xmlns:con="http://eviware.com/soapui/config">
+  <con:description>This is a sample TestSuite.
+
+            It contains a number of TestCases Illustrating a number of principles with ReadyAPI Test.
+
+            Try each test and read the descriptions.</con:description>
+  <con:settings>
+    <con:setting id="ExportJUnitReportAction@report-directory">C:\dev\testreport</con:setting>
+    <con:setting id="ExportJUnitReportAction@clear-existing">true</con:setting>
+    <con:setting id="ExportJUnitReportAction@format">Frames</con:setting>
+    <con:setting id="CreateReportAction@report-directory">C:\dev\testreport</con:setting>
+    <con:setting id="CreateReportAction@format">Multiple Pages</con:setting>
+    <con:setting id="IncludeOverview">true</con:setting>
+    <con:setting id="IncludeResults">true</con:setting>
+    <con:setting id="FlowLayout">false</con:setting>
+    <con:setting id="ErrorDetails">true</con:setting>
+    <con:setting id="IncludeCoverage">true</con:setting>
+    <con:setting id="ReportTitle">Default Title</con:setting>
+    <con:setting id="574cf3f6-8e98-48d7-86c8-27a4e2b63ab4fileName">TestSuite</con:setting>
+  </con:settings>
+  <con:savedRecentRuns>1</con:savedRecentRuns>
+  <con:runType>SEQUENTIAL</con:runType>
+  <con:properties/>
+  <con:setupScript/>
+  <con:tearDownScript/>
+  <con:reportScript/>
+  <con:reportParameters/>
+  <con:tagId>b4a2040f-9f35-4258-af0e-bd8e6654b5c9</con:tagId>
+  <con:tagId>2e1e5da8-a7d1-4d2a-a7d1-2f918f97a8a0</con:tagId>
+</con:testSuite>

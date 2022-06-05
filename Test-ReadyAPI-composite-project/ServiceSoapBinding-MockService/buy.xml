@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:mockOperation name="buy" interface="ServiceSoapBinding" operation="buy" id="423d4fe3-9962-47a1-9956-c14e1906e224" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="423d4fe3-9962-47a1-9956-c14e1906e224fileName">buy</con:setting>
+  </con:settings>
+  <con:dispatchPath>def groovyUtils = new com.eviware.soapui.support.GroovyUtils( context )
+                def holder = groovyUtils.getXmlHolder( mockRequest.requestContent )
+
+                def sessionid = holder.getNodeValue( "//sessionid" )
+
+                // check
+                if( !context.hasProperty( sessionid ))
+                return "Invalid Session Id Fault"
+
+                def buystring = holder.getNodeValue( "//buystring" )
+
+                if (buystring == "all")
+                return "WildCard Response"
+                else if (buystring == "Item 1")
+                return "Item 1 Response"
+                else if (buystring == "Item 2")
+                return "Item 2 Response"
+                else if (buystring == "Item 3")
+                return "Item 3 Response"
+                else if (buystring == "Item 4")
+                return "Item 3 Response"
+                else if (buystring == "Item 5")
+                return "Item 5 Response"
+                else
+                return "Unknown Response"
+
+
+                return "Search Response"</con:dispatchPath>
+  <con:dispatchStyle>SCRIPT</con:dispatchStyle>
+  <con:defaultResponse>Buy Response</con:defaultResponse>
+  <con:dispatchXPath/>
+  <con:parameterDispatcherRuleContainer/>
+  <con:routeScript/>
+  <con:response name="Buy Response" encoding="UTF-8" httpResponseStatus="200" id="d1f684bf-5f77-406c-bcd0-abc154b78c46" dataSource="">
+    <con:settings/>
+    <con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sam="http://www.soapui.org/sample/">
+ <soapenv:Header/>
+ <soapenv:Body>
+ <sam:buyResponse>
+ <sam:buyResponseContent>
+ <purchasestatus>
+ <id>?</id>
+ <stockStatus>?</stockStatus>
+ <expectedDelivery>?</expectedDelivery>
+ </purchasestatus>
+ </sam:buyResponseContent>
+ </sam:buyResponse>
+ </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent>
+    <con:wsaConfig mustUnderstand="NONE" version="200508"/>
+  </con:response>
+  <con:response name="Item 1 Response" encoding="UTF-8" httpResponseStatus="200" id="3a7212f0-53a4-4e8d-b5c8-54d34a104cb4" dataSource="">
+    <con:settings/>
+    <con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sam="http://www.soapui.org/sample/">
+ <soapenv:Header/>
+ <soapenv:Body>
+ <sam:buyResponse>
+ <sam:buyResponseContent>
+ <purchasestatus>
+ <id>Item 1</id>
+ <stockStatus>1 unit</stockStatus>
+ <expectedDelivery>2000 years from now</expectedDelivery>
+ </purchasestatus>
+ </sam:buyResponseContent>
+ </sam:buyResponse>
+ </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent>
+    <con:wsaConfig mustUnderstand="NONE" version="200508"/>
+  </con:response>
+  <con:response name="Item 2 Response" encoding="UTF-8" httpResponseStatus="200" id="fd5b8df2-4d23-402e-9f37-e8c61aa98c81" dataSource="">
+    <con:settings/>
+    <con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sam="http://www.soapui.org/sample/">
+ <soapenv:Header/>
+ <soapenv:Body>
+ <sam:buyResponse>
+ <sam:buyResponseContent>
+ <purchasestatus>
+ <id>Item 2</id>
+ <stockStatus>10 000 boxes</stockStatus>
+ <expectedDelivery>1 week</expectedDelivery>
+ </purchasestatus>
+ </sam:buyResponseContent>
+ </sam:buyResponse>
+ </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent>
+    <con:wsaConfig mustUnderstand="NONE" version="200508"/>
+  </con:response>
+  <con:response name="Item 3 Response" encoding="UTF-8" httpResponseStatus="200" id="6fa464ef-42b7-4dde-b3cf-1d555e7c3cec" dataSource="">
+    <con:settings/>
+    <con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sam="http://www.soapui.org/sample/">
+ <soapenv:Header/>
+ <soapenv:Body>
+ <sam:buyResponse>
+ <sam:buyResponseContent>
+ <purchasestatus>
+ <id>Item 3</id>
+ <stockStatus>4 towels</stockStatus>
+ <expectedDelivery>Any day now...</expectedDelivery>
+ </purchasestatus>
+ </sam:buyResponseContent>
+ </sam:buyResponse>
+ </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent>
+    <con:wsaConfig mustUnderstand="NONE" version="200508"/>
+  </con:response>
+  <con:response name="Item 4 Response" encoding="UTF-8" httpResponseStatus="200" id="b598ded2-75cc-438a-b558-103bcbbed0ae" dataSource="">
+    <con:settings/>
+    <con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sam="http://www.soapui.org/sample/">
+ <soapenv:Header/>
+ <soapenv:Body>
+ <sam:buyResponse>
+ <sam:buyResponseContent>
+ <purchasestatus>
+ <id>Item 4</id>
+ <stockStatus>1 unit</stockStatus>
+ <expectedDelivery>In the near future.</expectedDelivery>
+ </purchasestatus>
+ </sam:buyResponseContent>
+ </sam:buyResponse>
+ </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent>
+    <con:wsaConfig mustUnderstand="NONE" version="200508"/>
+  </con:response>
+  <con:response name="Item 5 Response" encoding="UTF-8" httpResponseStatus="200" id="01f5c66f-7253-471f-a8d3-b2beb0869266" dataSource="">
+    <con:settings/>
+    <con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sam="http://www.soapui.org/sample/">
+ <soapenv:Header/>
+ <soapenv:Body>
+ <sam:buyResponse>
+ <sam:buyResponseContent>
+ <purchasestatus>
+ <id>Item 5</id>
+ <stockStatus>1 license</stockStatus>
+ <expectedDelivery>You should already have it.</expectedDelivery>
+ </purchasestatus>
+ </sam:buyResponseContent>
+ </sam:buyResponse>
+ </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent>
+    <con:wsaConfig mustUnderstand="NONE" version="200508"/>
+  </con:response>
+  <con:response name="Invalid Session Id Fault" encoding="UTF-8" httpResponseStatus="200" id="7403376f-6d10-429c-8604-a1ef45fab958" dataSource="">
+    <con:settings/>
+    <con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+ <soapenv:Body>
+ <soapenv:Fault>
+ <faultcode>Client</faultcode>
+ <faultstring>Invalid Session Id</faultstring>
+ </soapenv:Fault>
+ </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent>
+    <con:wsaConfig mustUnderstand="NONE" version="200508"/>
+  </con:response>
+  <con:response name="Unknown Response" encoding="UTF-8" httpResponseStatus="200" id="3790f55a-9e06-4edf-a55e-ccb7ddc3abf1" dataSource="">
+    <con:settings/>
+    <con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sam="http://www.soapui.org/sample/">
+ <soapenv:Header/>
+ <soapenv:Body>
+ <sam:buyResponse>
+ <sam:buyResponseContent>
+ <purchasestatus>
+ <id>?</id>
+ <stockStatus>?</stockStatus>
+ <expectedDelivery>?</expectedDelivery>
+ </purchasestatus>
+ </sam:buyResponseContent>
+ </sam:buyResponse>
+ </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent>
+    <con:wsaConfig mustUnderstand="NONE" version="200508"/>
+  </con:response>
+  <con:response name="WildCard Response" encoding="UTF-8" httpResponseStatus="200" id="d2a6bdf2-7a04-490f-aa74-33306a96cd66" dataSource="">
+    <con:settings/>
+    <con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sam="http://www.soapui.org/sample/">
+ <soapenv:Header/>
+ <soapenv:Body>
+ <sam:buyResponse>
+ <sam:buyResponseContent>
+ <purchasestatus>
+ <id>Item 1</id>
+ <stockStatus>1 unit</stockStatus>
+ <expectedDelivery>2000 years from now</expectedDelivery>
+ </purchasestatus>
+ <purchasestatus>
+ <id>Item 2</id>
+ <stockStatus>10 000 boxes</stockStatus>
+ <expectedDelivery>1 week</expectedDelivery>
+ </purchasestatus>
+	 <purchasestatus>
+ <id>Item 3</id>
+ <stockStatus>4 towels</stockStatus>
+ <expectedDelivery>Any day now...</expectedDelivery>
+ </purchasestatus>
+ <purchasestatus>
+ <id>Item 4</id>
+ <stockStatus>1 unit</stockStatus>
+ <expectedDelivery>In the near future.</expectedDelivery>
+ </purchasestatus>
+ <purchasestatus>
+ <id>Item 5</id>
+ <stockStatus>1 license</stockStatus>
+ <expectedDelivery>You should already have it.</expectedDelivery>
+ </purchasestatus>
+ </sam:buyResponseContent>
+ </sam:buyResponse>
+ </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent>
+    <con:wsaConfig mustUnderstand="NONE" version="200508"/>
+  </con:response>
+  <con:dispatchConfig/>
+</con:mockOperation>

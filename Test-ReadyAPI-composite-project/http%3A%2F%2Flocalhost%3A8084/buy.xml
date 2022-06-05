@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="buy" path="/buy" id="d2e78192-32e5-44ea-b917-4dccd7c6470b" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="d2e78192-32e5-44ea-b917-4dccd7c6470bfileName">buy</con:setting>
+  </con:settings>
+  <con:parameters>
+    <con:parameter>
+      <con:name>sessionid</con:name>
+      <con:value/>
+      <con:style>QUERY</con:style>
+      <con:default/>
+    </con:parameter>
+    <con:parameter>
+      <con:name>buystring</con:name>
+      <con:value/>
+      <con:style>QUERY</con:style>
+      <con:default/>
+    </con:parameter>
+  </con:parameters>
+  <con:method name="Method 1" id="776de6e3-98ad-49a2-9676-be7bfeff03f0" method="POST">
+    <con:settings/>
+    <con:parameters/>
+    <con:request name="Request 1" id="15159f81-8f38-48e1-8e4d-5ca7e66b117c" mediaType="application/json" postQueryString="false">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+      </con:settings>
+      <con:endpoint>http://localhost:8084</con:endpoint>
+      <con:request/>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters>
+        <entry key="buystring" value="Item 1" xmlns="http://eviware.com/soapui/config"/>
+      </con:parameters>
+    </con:request>
+  </con:method>
+</con:resource>

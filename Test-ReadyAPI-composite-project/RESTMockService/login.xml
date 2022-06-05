@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:restMockAction name="login" method="POST" resourcePath="/login" id="82d0d51b-1cc5-4a16-835e-f1da0547efbd" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="82d0d51b-1cc5-4a16-835e-f1da0547efbdfileName">login</con:setting>
+  </con:settings>
+  <con:defaultResponse>OK Response</con:defaultResponse>
+  <con:dispatchStyle>SCRIPT</con:dispatchStyle>
+  <con:dispatchConfig/>
+  <con:dispatchPath>def queryString = mockRequest.getRequest().getQueryString()
+
+                String[] fields = queryString.split("&amp;");
+                String[] kv;
+
+                // parse username and password from login request
+                HashMap&lt;String, String> params = new HashMap&lt;String, String>()
+                for (int i = 0; i &lt; fields.length; ++i){
+                kv = fields[i].split("=");
+                if (2 == kv.length)
+                params.put(kv[0], kv[1]);
+                }
+
+                def username = params.get("username")
+                def password = params.get("password")
+                def sum = username + password
+
+                // generate a session ID sequence
+                def sessionid = String.valueOf( Math.random() ).substring( 2 )
+
+                // set session in sum property to be references in response
+                context.setProperty( sum, sessionid )
+                context.setProperty( sessionid, sum )
+
+                requestContext.sessionid = sessionid
+
+                // set the response
+                return "Ok Response"</con:dispatchPath>
+  <con:dispatchXPath/>
+  <con:parameterDispatcherRuleContainer/>
+  <con:routeScript/>
+  <con:response name="OK Response" id="665a289b-2b31-4035-bd3f-19eeabb96c07" httpResponseStatus="200" mediaType="application/json" dataSource="">
+    <con:settings/>
+    <con:responseContent>{
+                    "sessionid" : "${sessionid}",
+                    "timestamp" :
+                    "${=import java.text.SimpleDateFormat ; new SimpleDateFormat('YYYY-MM-DD HH:mm:ss').format(new Date())}"
+                    }</con:responseContent>
+  </con:response>
+  <con:response name="Invalid Login Fault" id="b0ef5d4b-b9a2-41f6-8657-cfd3231988d2" httpResponseStatus="401" mediaType="application/json" dataSource="">
+    <con:settings/>
+    <con:responseContent>{"Invalid Login" : "The login credentials are invalid&lt;/sam:loginFault" }</con:responseContent>
+  </con:response>
+  <con:response name="Already Logged In Fault" id="61773a8f-720a-4a1e-8125-21b2e5d896b9" httpResponseStatus="401" mediaType="application/json" dataSource="">
+    <con:settings/>
+    <con:responseContent>{ "Already Logged In" : "The specified credentials are already logged in" }</con:responseContent>
+  </con:response>
+</con:restMockAction>
